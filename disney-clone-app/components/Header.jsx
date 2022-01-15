@@ -5,8 +5,11 @@ import {
   SearchIcon,
   StarIcon,
 } from "@heroicons/react/solid";
+import { useRouter } from "next/router";
 
 export default function Header() {
+  const router = useRouter();
+
   return (
     <div className="sticky bg-[#040714] top-0 z-[1000] h-[72px] flex items-center px-10 md:px-12 ">
       <Image
@@ -14,6 +17,7 @@ export default function Header() {
         width={80}
         height={80}
         className="cursor-pointer"
+        onClick={() => router.push("/")}
       />
       <div className=" hidden ml-10 md:flex items-center space-x-6 ">
         <a className="header-link group">
