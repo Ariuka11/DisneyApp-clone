@@ -6,7 +6,6 @@ import {
   StarIcon,
 } from "@heroicons/react/solid";
 import { useRouter } from "next/router";
-
 export default function Header() {
   const router = useRouter();
 
