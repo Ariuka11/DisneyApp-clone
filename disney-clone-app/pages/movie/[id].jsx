@@ -6,10 +6,11 @@ import Header from "../../components/Header";
 import ReactPlayer from "react-player";
 
 function Movie({ result }) {
+  console.log("movie", result);
   const base_url = "https://image.tmdb.org/t/p/original/";
+  const [showPlayer, setShowPlayer] = useState(false);
   const index = result.videos.results.findIndex((e) => e.type === "Trailer");
 
-  const [showPlayer, setShowPlayer] = useState(false);
   return (
     <div className="relative">
       <Head>
@@ -20,7 +21,7 @@ function Movie({ result }) {
       <section className="relative z-50">
         <div className="relative min-h-[calc(100vh-72px)]">
           <Image
-            src={`${base_url}${result.backdrop_path}`}
+            src={`${base_url}${result.backdrop_path || result.poster_path} `}
             layout="fill"
             objectFit="cover"
           />
@@ -110,7 +111,6 @@ export async function getServerSideProps(context) {
   console.log("context", context);
   const { id } = context.query;
   const url = "https://api.themoviedb.org/3/movie/";
-
   const req = await fetch(
     `${url}${id}?api_key=${process.env.MOVIE_API_KEY}&language=en-US&append_to_response=videos`
   ).then((res) => res.json());
