@@ -1,0 +1,22 @@
+import Image from "next/image";
+import { useRouter } from "next/router";
+
+export default function MovieThumbnail({ result }) {
+  const base_url = "https://image.tmdb.org/t/p/original/";
+  const router = useRouter();
+
+  return (
+    <div
+      className="flex min-w-[200px] min-h-[300px] md:min-w-[250px] md:min-h-[380px] rounded-lg overflow-hidden shadow-xl cursor-pointer border-[3px] border-[#f9f9f9f9] border-opacity-5 hover:border-opacity-80 hover:shadow-2xl transform hover:scale-105 transition duration-300 my-1"
+      onClick={() => router.push(`/movie/${result.id}`)}
+    >
+      <Image
+        src={`${base_url}${result.poster_path}`}
+        width={330}
+        height={210}
+        objectFit="cover"
+        className="rounded-lg"
+      />
+    </div>
+  );
+}

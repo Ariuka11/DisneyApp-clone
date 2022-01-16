@@ -21,8 +21,10 @@ export default function Home({
       <main className="relative min-h-screen after:bg-home after:bg-center after:bg-cover after:bg-no-repeat after:bg-fixed after:absolute after:inset-0 after:z-[-1]">
         <Slider />
         <Brand />
-        <MoviesCollection popM={popularMovies} rated={topRatedMovies} />
-        <ShowsCollection popS={popularShows} rated={topRatedShows} />
+        <MoviesCollection results={popularMovies} title="Popular Movies" />
+        <ShowsCollection results={popularShows} title="Popular Tv Shows" />
+        <MoviesCollection results={topRatedMovies} title="Top Rated Movies" />
+        <ShowsCollection results={topRatedShows} title="Top Rated Shows" />
       </main>
     </div>
   );
