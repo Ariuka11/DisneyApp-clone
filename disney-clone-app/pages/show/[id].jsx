@@ -10,7 +10,7 @@ function Show({ result }) {
 
   const [showPlayer, setShowPlayer] = useState(false);
   const index = result.videos.results.findIndex((e) => e.type === "Trailer");
-
+  const base_url = "https://image.tmdb.org/t/p/original/";
   return (
     <div className="relative">
       <Head>
