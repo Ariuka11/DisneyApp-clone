@@ -37,7 +37,7 @@ export default function Home({
 }
 
 const tmdbUrl = "https://api.themoviedb.org/3";
-export async function getServerSideProps(context) {
+export async function getServerSideProps() {
   const [
     popularMoviesRes,
     popularShowsRes,
