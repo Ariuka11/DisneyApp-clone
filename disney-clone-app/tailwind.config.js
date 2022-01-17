@@ -9,9 +9,9 @@ module.exports = {
       backgroundImage: (theme) => ({
         home: "url(/images/background.png)",
       }),
-    },
-    fontFamily: {
-      body: ["Montserrat", "sans-serif"],
+      fontFamily: {
+        body: ["Poppins", "sans-serif"],
+      },
     },
   },
   plugins: [require("tailwind-scrollbar-hide")],
